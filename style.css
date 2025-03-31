@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  text-decoration: none;
+}
+button {
+  border: none;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.799);
+  color: #fff;
+  padding-top: 150px;
+  font-family: Montserrat;
+}
+.container {
+  width: 500px;
+  margin: 0 auto;
+  background-color: blueviolet;
+  padding: 30px;
+}
+h1 {
+  margin-bottom: 20px;
+}
+form {
+  width: 500px;
+  font-family: Montserrat;
+}
+input {
+  outline: none;
+}
+.ul {
+  width: 500px;
+}
+
+.li {
+  border: 1px solid;
+  border-right: none;
+  height: 29px;
+  padding-top: 8px;
+  padding-left: 5px;
+  margin-bottom: 12px;
+}
+.submit {
+  height: 30px;
+  background-color: #eaf608;
+  border: none;
+  font-size: 13px;
+  padding: 8px 4px;
+  cursor: pointer;
+}
+.btn {
+  display: block;
+  margin-left: auto;
+  color: #fff;
+  cursor: pointer;
+  background-color: black;
+  padding: 9px 11px;
+  transform: translateY(-25px);
+}
+.input {
+  width: 82%;
+  margin-bottom: 20px;
+  height: 29px;
+  padding-left: 8px;
+}
+.input::placeholder {
+  padding-left: 5px;
+}
+/* // var form = document.querySelector(".form");
+// var ul = document.querySelector(".ul");
+
+// form.addEventListener("submit", toDo);
+
+// function toDo(e) {
+//   e.preventDefault();
+
+//   var input = document.querySelector(".input");
+//   var inputText = input.value;
+
+//   var li = document.createElement("li");
+//   li.className = "li";
+
+//   var textNode = document.createTextNode(inputText);
+//   li.appendChild(textNode);
+
+//   // +++++++++++создаем кнопку+++++++++++++++++
+
+//   var deleteBtn = document.createElement("button");
+//   deleteBtn.appendChild(document.createTextNode("Удалить"));
+
+//   deleteBtn.className = "btn";
+//   deleteBtn.dataset.action = "delete";
+
+//   li.appendChild(deleteBtn);
+//   ul.prepend(li);
+
+//   input.value = "";
+// }
+
+// const deleteItem = document.querySelectorAll(".btn");
+
+// // ++++++++++++++++++++++++++++++++++++++++++++
+
+// ul.addEventListener("click", removeLi);
+
+// function removeLi(e) {
+//   if (
+//     e.target.hasAttribute("data-action") &&
+//     e.target.getAttribute("data-action") == "delete"
+//   ) {
+//     e.target.parentNode.remove();
+//   }
+// } */
