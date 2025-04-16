@@ -1,40 +1,64 @@
 const form = document.querySelector(".form");
 const ul = document.querySelector(".ul");
 
-form.addEventListener("submit", toDo);
-
-function toDo(e) {
+// Добавление задачи
+form.addEventListener("submit", (e) => {
   e.preventDefault();
+  
+  const input = document.querySelector(".input");
+  const text = input.value.trim();
+  
+  if (!text) return;
 
-  let input = document.querySelector(".input");
-  let inputText = input.value;
-
-  let li = document.createElement("li");
+  const li = document.createElement("li");
   li.className = "li";
-  let textNode = document.createTextNode(inputText);
-  li.appendChild(textNode);
+  
+  // Создаем текстовый элемент
+  const textSpan = document.createElement("span");
+  textSpan.textContent = text;
+  textSpan.className = "task-text";
+  li.appendChild(textSpan);
 
-  // Создаем кнопку удалить
+  // Кнопка редактирования
+  const editBtn = document.createElement("button");
+  editBtn.className = "btn edit-btn";
+  editBtn.dataset.action = "edit";
+  editBtn.textContent = "Редактировать";
+  li.appendChild(editBtn);
 
-  let deleteBtn = document.createElement("button");
-  deleteBtn.appendChild(document.createTextNode("Удалить"));
-  deleteBtn.className = "btn";
+  // Кнопка удаления
+  const deleteBtn = document.createElement("button");
+  deleteBtn.className = "btn delete-btn";
   deleteBtn.dataset.action = "delete";
-
+  deleteBtn.textContent = "Удалить";
   li.appendChild(deleteBtn);
 
   ul.prepend(li);
-
   input.value = "";
-}
+});
 
-// Производим удаление
+// Обработчик всех событий
+ul.addEventListener('click', (e) => {
+  const target = e.target;
+  const li = target.closest('.li');
 
-ul.addEventListener("click", removeLi);
+  // Редактирование
+  if (target.dataset.action === 'edit') {
+    const textSpan = li.querySelector('.task-text');
+    const editBtn = target;
 
-function removeLi(e) {
-  e.target.hasAttribute("data-action") &&
-  e.target.getAttribute("data-action") == "delete"
-    ? e.target.parentNode.remove()
-    : "";
-}
+    // Переключаем режим редактирования
+    if (editBtn.textContent === 'Редактировать') {
+      textSpan.contentEditable = true;
+      textSpan.focus();
+      editBtn.textContent = 'Сохранить';
+    } else {
+      textSpan.contentEditable = false;
+      editBtn.textContent = 'Редактировать';
+    }
+    
+  // Удаление
+  } else if (target.dataset.action === 'delete') {
+    li.remove();
+  }
+});
