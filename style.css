@@ -23,8 +23,9 @@ body {
 .container {
   width: 500px;
   margin: 0 auto;
-  background-color: #2c8fe699;
+  background-color: #131111d4;
   padding: 30px;
+  border-radius: 11px;
 }
 h1 {
   margin-bottom: 20px;
@@ -43,27 +44,43 @@ input {
 .li {
   border: 1px solid;
   border-right: none;
-  height: 64px;
+  height: 28px;
   padding-top: 8px;
   padding-left: 5px;
   margin-bottom: 12px;
+  border-radius: 11px;
+}
+.completed .task-text {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+.done-btn {
+  transition: all 0.3s;
+}
+.completed .done-btn {
+  background-color: #28a745 !important;
 }
 .submit {
   height: 30px;
-  background-color: #4e32717d;
+  background-color: transparent;
   border: none;
   font-size: 13px;
   padding: 8px 4px;
   cursor: pointer;
+  color: #d50303;
+  border-radius: 11px;
 }
 .btn {
   display: block;
   margin-left: auto;
-  color: #fff;
+  color: #d50303;
   cursor: pointer;
-  background-color: #0000008c;
+  background-color: transparent;
   padding: 9px 11px;
   transform: translateY(-25px);
+  border-radius: 11px;
+  float: right;
+  margin-top: 16px;
 }
 .edit{
   padding: 5px;
@@ -73,6 +90,7 @@ input {
   margin-bottom: 20px;
   height: 29px;
   padding-left: 8px;
+  border-radius: 11px;
 }
 .input::placeholder {
   padding-left: 5px;

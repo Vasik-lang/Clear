@@ -19,6 +19,13 @@ form.addEventListener("submit", (e) => {
   textSpan.className = "task-text";
   li.appendChild(textSpan);
 
+  //Кнопка выполнения
+  const doneBtn = document.createElement("button");
+  doneBtn.className = "btn done-btn";
+  doneBtn.dataset.action = "done";
+  doneBtn.textContent = "Выполнено";
+  li.appendChild(doneBtn);
+
   // Кнопка редактирования
   const editBtn = document.createElement("button");
   editBtn.className = "btn edit-btn";
@@ -33,6 +40,7 @@ form.addEventListener("submit", (e) => {
   deleteBtn.textContent = "Удалить";
   li.appendChild(deleteBtn);
 
+
   ul.prepend(li);
   input.value = "";
 });
@@ -41,6 +49,19 @@ form.addEventListener("submit", (e) => {
 ul.addEventListener('click', (e) => {
   const target = e.target;
   const li = target.closest('.li');
+
+  //Выполнение
+  if (target.dataset.action === 'done') {
+    li.classList.toggle('completed');
+
+    if (li.classList.contains('completed')) {
+      target.textContent = 'Отменить';
+      target.style.backgroundColor = '#28a745';
+    } else {
+      target.textContent = 'Выполнено';
+      target.style.backgroundColor = '';
+    }
+  }
 
   // Редактирование
   if (target.dataset.action === 'edit') {
@@ -61,4 +82,7 @@ ul.addEventListener('click', (e) => {
   } else if (target.dataset.action === 'delete') {
     li.remove();
   }
+
+
+  
 });
