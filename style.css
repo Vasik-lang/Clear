@@ -1,8 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic');
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 ul,
@@ -10,16 +11,14 @@ li {
   list-style: none;
   text-decoration: none;
 }
-button {
-  border: none;
-}
 
 body {
   background-color: rgba(0, 0, 0, 0.799);
-  color: #fff;
-  padding-top: 150px;
+  color: #fff; 
   font-family: Montserrat;
+  padding-top: 150px;
 }
+
 .container {
   width: 500px;
   margin: 0 auto;
@@ -27,116 +26,103 @@ body {
   padding: 30px;
   border-radius: 11px;
 }
+
 h1 {
   margin-bottom: 20px;
+  text-align: center;
 }
-form {
-  width: 500px;
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 60%;
+  height: 35px;
+  padding-left: 10px;
+  border-radius: 11px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   font-family: Montserrat;
 }
-input {
-  outline: none;
+
+.submit {
+  background-color: transparent; /* Синий цвет */
+  color: #c61818;
+  height: 35px;
 }
+
+.clear-completed-btn {
+  background-color: transparent; /* Красный цвет */
+  color: #c61818;
+}
+
 .ul {
-  width: 500px;
+  width: 100%;
 }
 
 .li {
-  border: 1px solid;
-  border-right: none;
-  height: 28px;
-  padding-top: 8px;
-  padding-left: 5px;
-  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 11px;
+  margin-bottom: 10px;
+  background-color: #2b2b2b;
 }
+
+.task-counter {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.task-counter span {
+  font-weight: bold;
+  color: #fff;
+}
+
+.task-text {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
 .completed .task-text {
   text-decoration: line-through;
   color: #6c757d;
 }
+
 .done-btn {
+  background-color: transparent;
+  color: #28a745;
   transition: all 0.3s;
 }
+
 .completed .done-btn {
   background-color: #28a745 !important;
+  color: white;
 }
-.submit {
-  height: 30px;
+
+.edit-btn {
   background-color: transparent;
-  border: none;
-  font-size: 13px;
-  padding: 8px 4px;
-  cursor: pointer;
-  color: #d50303;
-  border-radius: 11px;
+  color: #ffc107;
+  margin-left: 5px;
 }
-.btn {
-  display: block;
-  margin-left: auto;
-  color: #d50303;
-  cursor: pointer;
+
+.delete-btn {
   background-color: transparent;
-  padding: 9px 11px;
-  transform: translateY(-25px);
-  border-radius: 11px;
-  float: right;
-  margin-top: 16px;
+  color: #dc3545;
+  margin-left: 5px;
 }
-.edit{
-  padding: 5px;
-}
-.input {
-  width: 73%;
-  margin-bottom: 20px;
-  height: 29px;
-  padding-left: 8px;
-  border-radius: 11px;
-}
-.input::placeholder {
-  padding-left: 5px;
-}
-/* // var form = document.querySelector(".form");
-// var ul = document.querySelector(".ul");
-
-// form.addEventListener("submit", toDo);
-
-// function toDo(e) {
-//   e.preventDefault();
-
-//   var input = document.querySelector(".input");
-//   var inputText = input.value;
-
-//   var li = document.createElement("li");
-//   li.className = "li";
-
-//   var textNode = document.createTextNode(inputText);
-//   li.appendChild(textNode);
-
-//   // +++++++++++создаем кнопку+++++++++++++++++
-
-//   var deleteBtn = document.createElement("button");
-//   deleteBtn.appendChild(document.createTextNode("Удалить"));
-
-//   deleteBtn.className = "btn";
-//   deleteBtn.dataset.action = "delete";
-
-//   li.appendChild(deleteBtn);
-//   ul.prepend(li);
-
-//   input.value = "";
-// }
-
-// const deleteItem = document.querySelectorAll(".btn");
-
-// // ++++++++++++++++++++++++++++++++++++++++++++
-
-// ul.addEventListener("click", removeLi);
-
-// function removeLi(e) {
-//   if (
-//     e.target.hasAttribute("data-action") &&
-//     e.target.getAttribute("data-action") == "delete"
-//   ) {
-//     e.target.parentNode.remove();
-//   }
-// } */

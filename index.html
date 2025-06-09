@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Список задач</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Список задач</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Список задач</h1>
       <form class="form">
-        <input placeholder="Введите текст" class="input" type="text" />
+      <input placeholder="Введите текст" class="input" type="text" />
+      <button type="submit" class="btn submit">Добавить</button>
+      <button class="btn clear-completed-btn">Удалить все выполненные</button>
+    </form>
 
-        <input class="submit" type="submit" />
-      </form>
-
+    
       <ul class="ul">
         <li class="li">
           купить машину
@@ -30,6 +31,9 @@
           <button data-action="delete" class="btn">Удалить</button>
         </li>
       </ul>
+      <div class="task-counter">
+      Выполнено: <span class="completed-count">0</span> из <span class="total-count">0</span>
+    </div>
     </div>
     <script src="./app.js"></script>
   </body>
