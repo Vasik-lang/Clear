@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ul.prepend(li);
     input.value = "";
+
+      updateTaskCounter();
   });
 
   // Обработчик событий для списка задач
@@ -75,6 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
         target.textContent = "Выполнено";
         target.style.backgroundColor = "";
       }
+
+      updateTaskCounter();
     }
 
     // Редактирование задачи
@@ -95,6 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Удаление задачи
     if (target.dataset.action === "delete") {
       li.remove();
+      updateTaskCounter();
+
     }
   });
 
@@ -102,5 +108,9 @@ document.addEventListener("DOMContentLoaded", () => {
   clearCompletedBtn.addEventListener("click", () => {
     const completedTasks = document.querySelectorAll(".li.completed");
     completedTasks.forEach((task) => task.remove());
+    updateTaskCounter();
+
   });
+
+  updateTaskCounter();
 });

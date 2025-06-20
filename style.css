@@ -58,13 +58,13 @@ h1 {
 }
 
 .submit {
-  background-color: transparent; /* Синий цвет */
+  background-color: transparent;
   color: #c61818;
   height: 35px;
 }
 
 .clear-completed-btn {
-  background-color: transparent; /* Красный цвет */
+  background-color: transparent;
   color: #c61818;
 }
 
@@ -97,6 +97,9 @@ h1 {
 .task-text {
   flex-grow: 1;
   margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .completed .task-text {
@@ -125,4 +128,11 @@ h1 {
   background-color: transparent;
   color: #dc3545;
   margin-left: 5px;
+}
+
+[contenteditable="true"] {
+  outline: none; 
+  background-color: transparent; 
+  border: none; 
+  padding: 0; 
 }
