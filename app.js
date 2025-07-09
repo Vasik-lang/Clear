@@ -93,6 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         textSpan.contentEditable = false;
         editBtn.textContent = "Редактировать";
+
+        textSpan.textContent = textSpan.textContent.trim();
       }
     }
 
